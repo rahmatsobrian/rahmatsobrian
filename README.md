@@ -1,13 +1,10 @@
 <!-- ================= HEADER TYPING ================= -->
-<div align="center">
-  <img height="150" src="https://media.giphy.com/media/pnmy3Ep0sgEvcriajF/giphy.gif"  />
-</div>
+<h1 align="center">Hey there 👋</h1>
 
 ###
 
 <div align="center">
-<a href="https://t.me/rahmatsobrian">
-  <img src="https://img.shields.io/static/v1?message=Telegram&logo=telegram&label=&color=2CA5E0&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="telegram logo"  />
+  <img height="150" src="https://media.giphy.com/media/pnmy3Ep0sgEvcriajF/giphy.gif"  />
 </div>
 
 ###
@@ -16,9 +13,7 @@
   <img src="https://visitor-badge.laobi.icu/badge?page_id=rahmatsobrian.rahmatsobrian&"  />
 </div>
 
-###
-
-<h1 align="center">hey there 👋</h1>
+![:name](https://count.camora.dev/@:rahmatsobrian?theme=rule34)
 
 ###
 
@@ -38,10 +33,7 @@ Interests:
 ###
 
 ## 🚀 Tech Stack
-
 <div align="left">
-  <img src="https://img.shields.io/badge/Android-3DDC84?logo=android&logoColor=black&style=for-the-badge" height="40" alt="android logo"  />
-  <img width="12" />
   <img src="https://img.shields.io/badge/Bash-4EAA25?logo=gnubash&logoColor=white&style=for-the-badge" height="40" alt="bash logo"  />
   <img width="12" />
   <img src="https://img.shields.io/badge/C++-00599C?logo=cplusplus&logoColor=white&style=for-the-badge" height="40" alt="cplusplus logo"  />
@@ -80,6 +72,12 @@ Interests:
     <img src="https://custom-icon-badges.demolab.com/badge/Windows-0078D6?style=for-the-badge&logo=windows11"  />
   <img width="12" />
   <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white"  />
+  <img width="12" />
+</div>
+
+# OS
+<div align="left">
+<img src="https://img.shields.io/badge/Android-3DDC84?logo=android&logoColor=black&style=for-the-badge" height="40" alt="android logo"  />
   <img width="12" />
 </div>
 
