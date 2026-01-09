@@ -1,36 +1,43 @@
+<!-- ================= HEADER TYPING ================= -->
 <div align="center">
   <img height="150" src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif"  />
 </div>
 
-###
+---
 
 <div align="center">
+<a href="https://t.me/rahmatsobrian">
   <img src="https://img.shields.io/static/v1?message=Telegram&logo=telegram&label=&color=2CA5E0&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="telegram logo"  />
 </div>
 
-###
+---
 
 <div align="center">
   <img src="https://visitor-badge.laobi.icu/badge?page_id=rahmatsobrian.rahmatsobrian&"  />
 </div>
 
-###
+---
 
 <h1 align="center">hey there 👋</h1>
 
-###
+---
 
-<h3 align="left">👩‍💻  About Me</h3>
+## 🧑‍💻 About Me
+```yaml
+Name: Rahmat Sobrian
+Country: Indonesia 🇮🇩
+Role: Android Modder / Linux Enthusiast
+Interests:
+  - Android System & Recovery (TWRP)
+  - Shell Scripting
+  - Kernel Tweaks
+  - Reverse Engineering
+  - Web UI (HTML, CSS, JS)
+```
 
-###
+---
 
-<p align="left">I'm Rahmat Sobrian from Indonesia<br><br>- 📚 I'm currently learning Everything</p>
-
-###
-
-<h3 align="left">🛠 Language and tools</h3>
-
-###
+## 🚀 Tech Stack
 
 <div align="left">
   <img src="https://img.shields.io/badge/Android-3DDC84?logo=android&logoColor=black&style=for-the-badge" height="40" alt="android logo"  />
@@ -58,14 +65,39 @@
   <img src="https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white&style=for-the-badge" height="40" alt="vercel logo"  />
 </div>
 
-###
+---
 
-<h3 align="left">🔥   My Stats :</h3>
+## ⚡ What I'm Working On
+- 🔧 Android Backup & Flash ZIP Scripts  
+- 🧠 Recovery & update-binary / updater-script research  
+- 🐧 Linux & BusyBox experiments  
+- 🌐 Web tools (Base64, Checker, UI)
 
-###
+---
 
-<div align="center">
-  <img src="https://streak-stats.demolab.com?user=rahmatsobrian&locale=en&mode=daily&theme=dark&hide_border=false&border_radius=5&order=3" height="220" alt="streak graph"  />
-</div>
+## 📊 GitHub Stats:
+![](https://github-readme-stats.vercel.app/api?username=rahmatsobrian&theme=dark&hide_border=false&include_all_commits=true&count_private=true)<br/>
+![](https://nirzak-streak-stats.vercel.app/?user=rahmatsobrian&theme=dark&hide_border=false)<br/>
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=rahmatsobrian&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
 
-###
+---
+
+## 🏆 GitHub Trophies
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=rahmatsobrian&theme=tokyonight&no-frame=true&row=1&column=6" />
+</p>
+
+---
+
+## 🌍 Connect With Me
+
+<p align="center">
+  <a href="https://t.me/rahmatsobrian">
+    <img src="https://img.shields.io/static/v1?message=Telegram&logo=telegram&label=&color=2CA5E0&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="telegram logo" />
+  </a>
+</p>
+
+---
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00F7FF,100:0077ff&height=120&section=footer"/>
