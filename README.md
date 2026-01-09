@@ -32,6 +32,8 @@ Interests:
 <div align="left">
 <img src="https://custom-icon-badges.demolab.com/badge/Termux-000000?style=for-the-badge&logo=termux&logoColor=white"  />
   <img width="12" />
+<img src="https://custom-icon-badges.demolab.com/badge/MT Manager-454545?style=for-the-badge&logo=mtmanager"  />
+  <img width="12" />
   <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white"  />
   <img width="12" />
   <img src="https://img.shields.io/badge/Android-3DDC84?logo=android&logoColor=black&style=for-the-badge" alt="android logo"  />
