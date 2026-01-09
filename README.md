@@ -1,6 +1,6 @@
 <!-- ================= HEADER TYPING ================= -->
 <div align="center">
-  <img height="150" src="https://gifyu.com/image/bhifP"  />
+  <img height="150" src="https://giphy.com/gifs/pnmy3Ep0sgEvcriajF"  />
 </div>
 
 ###
