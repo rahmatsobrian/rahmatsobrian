@@ -29,7 +29,7 @@ Interests:
 ###
 
 ## 🛠️ Tools
-<div align="left">
+<div align="center">
 <img src="https://custom-icon-badges.demolab.com/badge/Termux-000000?style=for-the-badge&logo=termux&logoColor=white"  />
   <img width="12" />
   <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white"  />
