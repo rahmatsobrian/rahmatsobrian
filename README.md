@@ -77,6 +77,10 @@ Interests:
   <img width="12" />
   <img src="https://custom-icon-badges.demolab.com/badge/ChatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white"  />
   <img width="12" />
+    <img src="https://custom-icon-badges.demolab.com/badge/Windows-0078D6?style=for-the-badge&logo=windows11"  />
+  <img width="12" />
+  <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white"  />
+  <img width="12" />
 </div>
 
 ###
