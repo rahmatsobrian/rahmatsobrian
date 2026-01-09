@@ -35,7 +35,7 @@ Interests:
   - Web UI (HTML, CSS, JS)
 ```
 
----
+###
 
 ## 🚀 Tech Stack
 
@@ -65,7 +65,7 @@ Interests:
   <img src="https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white&style=for-the-badge" height="40" alt="vercel logo"  />
 </div>
 
----
+###
 
 ## ⚡ What I'm Working On
 - 🔧 Android Backup & Flash ZIP Scripts  
@@ -73,22 +73,20 @@ Interests:
 - 🐧 Linux & BusyBox experiments  
 - 🌐 Web tools (Base64, Checker, UI)
 
----
+###
 
 ## 📊 GitHub Stats:
 ![](https://github-readme-stats.vercel.app/api?username=rahmatsobrian&theme=dark&hide_border=false&include_all_commits=true&count_private=true)<br/>
 ![](https://nirzak-streak-stats.vercel.app/?user=rahmatsobrian&theme=dark&hide_border=false)<br/>
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=rahmatsobrian&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
 
----
+###
 
 ## 🏆 GitHub Trophies
 
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=rahmatsobrian&theme=tokyonight&no-frame=true&row=1&column=6" />
-</p>
+![](https://github-profile-trophy.vercel.app/?username=rahmatsobrian&theme=radical&no-frame=false&no-bg=true&margin-w=4)
 
----
+###
 
 ## 🌍 Connect With Me
 
@@ -98,6 +96,6 @@ Interests:
   </a>
 </p>
 
----
+###
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00F7FF,100:0077ff&height=120&section=footer"/>
