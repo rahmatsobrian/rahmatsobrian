@@ -17,9 +17,9 @@
 ```yaml
 Name: Rahmat Sobrian
 Country: Indonesia 🇮🇩
-Role: Android Modder / Linux Enthusiast
+Role: Android Modder
 Interests:
-  - Android System & Recovery (TWRP)
+  - Android System & Recovery
   - Shell Scripting
   - Kernel Tweaks
   - Reverse Engineering
