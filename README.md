@@ -9,9 +9,7 @@
 
 ###
 
-<div align="center">
-![:name](https://count.camora.dev/@:rahmatsobrian?theme=rule34)
-</div>
+![:name](https://count.camora.dev/@:rahmatsobrian?theme=rule34&align=center)
 
 ###
 
