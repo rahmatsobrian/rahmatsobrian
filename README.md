@@ -32,8 +32,6 @@ Interests:
 <div align="left">
 <img src="https://custom-icon-badges.demolab.com/badge/Termux-000000?style=for-the-badge&logo=termux&logoColor=white"  />
   <img width="12" />
-  <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white"  />
-  <img width="12" />
   <img src="https://img.shields.io/badge/Android-3DDC84?logo=android&logoColor=black&style=for-the-badge" alt="android logo"  />
   <img width="12" />
   <img src="https://custom-icon-badges.demolab.com/badge/Windows-0078D6?style=for-the-badge&logo=windows11"  />
@@ -58,13 +56,6 @@ Interests:
 
 ###
 
-## 📊 GitHub Stats
-![](https://github-readme-stats.vercel.app/api?username=rahmatsobrian&theme=dark&hide_border=false&include_all_commits=true&count_private=true)<br/>
-![](https://nirzak-streak-stats.vercel.app/?user=rahmatsobrian&theme=dark&hide_border=false)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=rahmatsobrian&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
-
-###
-
 ## 🌍 Connect With Me
 
 <p align="center">
@@ -72,7 +63,3 @@ Interests:
     <img src="https://img.shields.io/static/v1?message=Telegram&logo=telegram&label=&color=2CA5E0&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="telegram logo" />
   </a>
 </p>
-
-###
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00F7FF,100:0077ff&height=120&section=footer"/>
