@@ -10,21 +10,15 @@
 
 </div>
 
-<br/>
-
 <div align="center">
   <img height="150" src="https://media.giphy.com/media/pnmy3Ep0sgEvcriajF/giphy.gif" />
 </div>
-
-<br/>
 
 <div align="center">
 
 ![:name](https://count.camora.dev/@:rahmatsobrian?theme=rule34&align=center)
 
 </div>
-
-<br/>
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
