@@ -28,9 +28,9 @@
 
 ```yaml
 Name   : RahmatSobrian
-Country : Indonesia 
+Country : Indonesia
 Role     : Android Modder
-Status  : Active
+Status  : Active
 
 Interests:
   - Android System
@@ -40,7 +40,9 @@ Interests:
   - Kernel Tweaks
   - Custom Kernel
   - Reverse Engineering
-  - HTML • CSS • JS
+  - HTML
+  - CSS
+  - JS
 ```
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
