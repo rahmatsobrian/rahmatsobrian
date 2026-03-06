@@ -1,65 +1,158 @@
-<!-- ================= HEADER TYPING ================= -->
-<h1 align="center">Hey there 👋</h1>
-
-###
-
 <div align="center">
-  <img height="150" src="https://media.giphy.com/media/pnmy3Ep0sgEvcriajF/giphy.gif"  />
+
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0d0d0d,30:00e5ff,70:7c4dff,100:00e676&height=220&section=header&text=Rahmat%20Sobrian&fontSize=56&fontColor=ffffff&fontAlignY=40&fontAlign=50&desc=Android%20Modder%20%E2%80%A2%20Shell%20Scripter%20%E2%80%A2%20Indonesia%20%F0%9F%87%AE%F0%9F%87%A9&descSize=15&descAlignY=60&descAlign=50&animation=fadeIn&stroke=00e5ff&strokeWidth=1" />
+
 </div>
 
-###
+<div align="center">
+
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=17&duration=2800&pause=1200&color=00E5FF&center=true&vCenter=true&multiline=false&width=520&lines=%24+whoami+%E2%86%92+Android+Modder;flash+zip+%3E+reboot+%3E+pray+%F0%9F%99%8F;busybox+is+life.+termux+is+home.;kernel+tweaker+%7C+reverse+engineer;if+%28bricked%29+%7B+fix%28%29%3B+%7D)](https://git.io/typing-svg)
+
+</div>
+
+<br/>
+
+<div align="center">
+  <img height="150" src="https://media.giphy.com/media/pnmy3Ep0sgEvcriajF/giphy.gif" />
+</div>
+
+<br/>
+
+<div align="center">
 
 ![:name](https://count.camora.dev/@:rahmatsobrian?theme=rule34&align=center)
 
-###
-
-## 🧑‍💻 About Me
-```yaml
-Name: Rahmat Sobrian
-Country: Indonesia 🇮🇩
-Role: Android Modder
-Interests:
-  - Android System & Recovery
-  - Shell Scripting
-  - Kernel Tweaks
-  - Reverse Engineering
-  - Web UI (HTML, CSS, JS)
-```
-
-###
-
-## 🛠️ Tools
-<div align="left">
-<img src="https://custom-icon-badges.demolab.com/badge/Termux-000000?style=for-the-badge&logo=termux&logoColor=white"  />
-  <img width="12" />
-  <img src="https://img.shields.io/badge/Android-3DDC84?logo=android&logoColor=black&style=for-the-badge" alt="android logo"  />
-  <img width="12" />
-  <img src="https://custom-icon-badges.demolab.com/badge/Windows-0078D6?style=for-the-badge&logo=windows11"  />
-  <img width="12" />
-  <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white"  />
-  <img width="12" />
-  <img src="https://custom-icon-badges.demolab.com/badge/ChatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white"  />
-  <img width="12" />
-  <img src="https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black&style=for-the-badge" alt="linux logo"  />
-  <img width="12" />
-  <img src="https://custom-icon-badges.demolab.com/badge/MT Manager-e0e0e0?style=for-the-badge&logo=mtmanager"  />
-  <img width="12" />
 </div>
 
-###
+<br/>
+
+---
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+
+## <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28"> About Me
+
+<div align="center">
+
+```yaml
+╔══════════════════════════════════════════════════╗
+║              RAHMAT SOBRIAN — PROFILE            ║
+╠══════════════════════════════════════════════════╣
+║  Name     :  Rahmat Sobrian                      ║
+║  Country  :  Indonesia  🇮🇩                       ║
+║  Role     :  Android Modder                      ║
+║  Status   :  🟢  Active & Building               ║
+╠══════════════════════════════════════════════════╣
+║  Interests:                                      ║
+║    ▸  Android System & Recovery                  ║
+║    ▸  Shell Scripting & Automation               ║
+║    ▸  Kernel Tweaks                              ║
+║    ▸  Reverse Engineering                        ║
+║    ▸  Web UI  →  HTML · CSS · JS                 ║
+╚══════════════════════════════════════════════════╝
+```
+
+</div>
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+
+## 🛠️ Tools & Stack
+
+<div align="center">
+
+![Termux](https://custom-icon-badges.demolab.com/badge/Termux-000000?style=for-the-badge&logo=termux&logoColor=00e5ff)
+![Android](https://img.shields.io/badge/Android-3DDC84?logo=android&logoColor=black&style=for-the-badge)
+![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black&style=for-the-badge)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?logo=ubuntu&logoColor=white&style=for-the-badge)
+![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?style=for-the-badge&logo=windows11)
+
+![Shell Script](https://img.shields.io/badge/Shell_Script-121011?logo=gnu-bash&logoColor=00e5ff&style=for-the-badge)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white&style=for-the-badge)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white&style=for-the-badge)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black&style=for-the-badge)
+![ChatGPT](https://custom-icon-badges.demolab.com/badge/ChatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)
+![MT Manager](https://custom-icon-badges.demolab.com/badge/MT_Manager-e0e0e0?style=for-the-badge&logo=mtmanager)
+
+</div>
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## ⚡ What I'm Working On
-- 🔧 Android Backup & Flash ZIP Scripts  
-- 🧠 Recovery & update-binary / updater-script research  
-- 🐧 Linux & BusyBox experiments  
-- 🌐 Web tools (Base64, Checker, UI)
 
-###
+<div align="center">
+
+| &nbsp; | Project | Description |
+|:---:|--------|-------------|
+| 🔧 | **Android Backup & Flash ZIPs** | Automation scripts for flashing, backup & restore via recovery |
+| 🧠 | **Recovery Research** | Deep-diving update-binary / updater-script logic |
+| 🐧 | **Linux & BusyBox Labs** | Custom builds, Termux automation, shell toolchains |
+| 🌐 | **Web Tools** | Base64 encoder, checkers, and custom UI components |
+
+</div>
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+
+## 📊 GitHub Stats
+
+<div align="center">
+
+<img width="49%" src="https://github-readme-stats.vercel.app/api?username=rahmatsobrian&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=00e5ff&icon_color=7c4dff&text_color=c9d1d9&border_radius=12" />
+<img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rahmatsobrian&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=00e5ff&text_color=c9d1d9&border_radius=12" />
+
+<br/>
+
+<img width="70%" src="https://streak-stats.demolab.com?user=rahmatsobrian&theme=tokyonight&hide_border=true&background=0D1117&stroke=00e5ff&ring=7c4dff&fire=00e676&currStreakLabel=00e5ff&sideLabels=c9d1d9&dates=c9d1d9&border_radius=12" />
+
+<br/>
+
+<img width="80%" src="https://github-readme-activity-graph.vercel.app/graph?username=rahmatsobrian&theme=tokyo-night&hide_border=true&bg_color=0d1117&color=00e5ff&line=7c4dff&point=00e676&area=true&area_color=00e5ff" />
+
+</div>
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+
+## 🏆 GitHub Trophies
+
+<div align="center">
+
+[![trophy](https://github-profile-trophy.vercel.app/?username=rahmatsobrian&theme=tokyonight&no-frame=true&no-bg=true&column=7&margin-w=4)](https://github.com/ryo-ma/github-profile-trophy)
+
+</div>
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## 🌍 Connect With Me
 
-<p align="center">
-  <a href="https://t.me/rahmatsobrian">
-    <img src="https://img.shields.io/static/v1?message=Telegram&logo=telegram&label=&color=2CA5E0&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="telegram logo" />
-  </a>
-</p>
+<div align="center">
+
+[![Telegram](https://img.shields.io/badge/Telegram-%232CA5E0.svg?logo=telegram&logoColor=white&style=for-the-badge)](https://t.me/rahmatsobrian)
+[![GitHub](https://img.shields.io/badge/GitHub-%23171515.svg?logo=github&logoColor=white&style=for-the-badge)](https://github.com/rahmatsobrian)
+
+</div>
+
+<br/>
+
+<div align="center">
+
+<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" width="70%" />
+
+</div>
+
+<br/>
+
+<div align="center">
+
+```bash
+$ echo "flash zip > reboot > pray 🙏"
+$ while true; do learn(); build(); break_then_fix(); done
+```
+
+</div>
+
+<br/>
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00e676,40:7c4dff,100:00e5ff&height=130&section=footer&animation=fadeIn" width="100%" />
+
+</div>
