@@ -110,7 +110,7 @@ Interests:
 <div align="center">
 
 ```bash
-$ echo "flash zip > reboot > pray "
+$ echo "flash zip > reboot > pray 🙏"
 $ while true; do learn(); build(); break_then_fix(); done
 ```
 
