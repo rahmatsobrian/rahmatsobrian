@@ -16,6 +16,8 @@
 
 <div align="center">
 
+<br/>
+
 ![:name](https://count.camora.dev/@:rahmatsobrian?theme=rule34&align=center)
 
 </div>
@@ -77,6 +79,8 @@ Interests:
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## 📊 GitHub Stats
+
+<div>
 
 <img width="65%" src="https://streak-stats.demolab.com?user=rahmatsobrian&theme=tokyonight&hide_border=true&background=0D1117&stroke=00e5ff&ring=7c4dff&fire=00e676&currStreakLabel=00e5ff&sideLabels=c9d1d9&dates=c9d1d9&border_radius=12" />
 
