@@ -80,7 +80,7 @@ Interests:
 
 ## 📊 GitHub Stats
 
-<div>
+<div align="center">
 
 <img width="65%" src="https://streak-stats.demolab.com?user=rahmatsobrian&theme=tokyonight&hide_border=true&background=0D1117&stroke=00e5ff&ring=7c4dff&fire=00e676&currStreakLabel=00e5ff&sideLabels=c9d1d9&dates=c9d1d9&border_radius=12" />
 
