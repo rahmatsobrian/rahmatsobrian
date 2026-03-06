@@ -27,23 +27,25 @@
 ## <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="26"> About Me
 
 ```yaml
-Name     : Rahmat Sobrian
-Country  : Indonesia 🇮🇩
-Role     : Android Modder
-Status   : 🟢 Active
+Name    : RahmatSobrian
+Country : Indonesia 
+Role       : Android Modder
+Status   : Active
 
 Interests:
   - Android System
   - Android Recovery
+  - Custom ROM
   - Shell Scripting
   - Kernel Tweaks
+  - Custom Kernel
   - Reverse Engineering
-  - Web UI → HTML · CSS · JS
+  - HTML • CSS • JS
 ```
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-## 🛠️ Tools & Stack
+##  Tools & Stack
 
 <div align="center">
 
@@ -63,22 +65,22 @@ Interests:
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-## ⚡ What I'm Working On
+##  What I'm Working On
 
 <div align="center">
 
 | &nbsp; | Project | Description |
 |:---:|--------|-------------|
-| 🔧 | **Android Backup & Flash ZIPs** | Automation scripts for flashing, backup & restore via recovery |
-| 🧠 | **Recovery Research** | Deep-diving update-binary / updater-script logic |
-| 🐧 | **Linux & BusyBox Labs** | Custom builds, Termux automation, shell toolchains |
-| 🌐 | **Web Tools** | Base64 encoder, checkers, and custom UI components |
+|  | **Android Backup & Flash ZIPs** | Automation scripts for flashing, backup & restore via recovery |
+|  | **Recovery Research** | Deep-diving update-binary / updater-script logic |
+|  | **Linux & BusyBox Labs** | Custom builds, Termux automation, shell toolchains |
+|  | **Web Tools** | Base64 encoder, checkers, and custom UI components |
 
 </div>
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-## 📊 GitHub Stats
+##  GitHub Stats
 
 <div align="center">
 
@@ -92,7 +94,7 @@ Interests:
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-## 🌍 Connect With Me
+##  Connect With Me
 
 <div align="center">
 
@@ -106,7 +108,7 @@ Interests:
 <div align="center">
 
 ```bash
-$ echo "flash zip > reboot > pray 🙏"
+$ echo "flash zip > reboot > pray "
 $ while true; do learn(); build(); break_then_fix(); done
 ```
 
