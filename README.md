@@ -26,8 +26,6 @@
 
 <br/>
 
----
-
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="26"> About Me
@@ -36,11 +34,12 @@
 Name     : Rahmat Sobrian
 Country  : Indonesia 🇮🇩
 Role     : Android Modder
-Status   : 🟢 Active & Building
+Status   : 🟢 Active
 
 Interests:
-  - Android System & Recovery
-  - Shell Scripting & Automation
+  - Android System
+  - Android Recovery
+  - Shell Scripting
   - Kernel Tweaks
   - Reverse Engineering
   - Web UI → HTML · CSS · JS
@@ -85,17 +84,9 @@ Interests:
 
 ## 📊 GitHub Stats
 
-<div align="center">
-
-<img width="48%" src="https://github-readme-stats.vercel.app/api?username=rahmatsobrian&show_icons=true&count_private=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=00e5ff&icon_color=7c4dff&text_color=c9d1d9&border_radius=12" />
-&nbsp;
-<img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rahmatsobrian&layout=compact&langs_count=8&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=00e5ff&text_color=c9d1d9&border_radius=12" />
-
-<br/><br/>
-
 <img width="65%" src="https://streak-stats.demolab.com?user=rahmatsobrian&theme=tokyonight&hide_border=true&background=0D1117&stroke=00e5ff&ring=7c4dff&fire=00e676&currStreakLabel=00e5ff&sideLabels=c9d1d9&dates=c9d1d9&border_radius=12" />
 
-<br/><br/>
+<br/>
 
 <img width="80%" src="https://github-readme-activity-graph.vercel.app/graph?username=rahmatsobrian&theme=tokyo-night&hide_border=true&bg_color=0d1117&color=00e5ff&line=7c4dff&point=00e676&area=true" />
 
