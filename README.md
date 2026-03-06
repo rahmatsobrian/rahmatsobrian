@@ -45,7 +45,7 @@ Interests:
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-##🛠️ Tools & Stack
+## 🛠️ Tools & Stack
 
 <div align="center">
 
@@ -65,7 +65,7 @@ Interests:
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-##🤝 What I'm Working On
+## ⚡ What I'm Working On
 
 <div align="center">
 
@@ -80,7 +80,7 @@ Interests:
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-##📊GitHub Stats
+## 📊 GitHub Stats
 
 <div align="center">
 
@@ -94,7 +94,7 @@ Interests:
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-##🌏Connect With Me
+## 🌏 Connect With Me
 
 <div align="center">
 
