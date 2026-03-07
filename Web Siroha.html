@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Siroha — AI Web Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  :root {
+    --bg: #f2f2f7;
+    --bg2: #e5e5ea;
+    --card: rgba(255,255,255,0.92);
+    --card-hover: rgba(255,255,255,1);
+    --border: rgba(60,60,67,0.13);
+    --text1: #1c1c1e;
+    --text2: #48484a;
+    --text3: #8e8e93;
+    --blue: #007aff;
+    --blue-light: #e8f1ff;
+    --green: #34c759;
+    --orange: #ff9500;
+    --red: #ff3b30;
+    --purple: #af52de;
+    --pink: #ff2d55;
+    --teal: #5ac8fa;
+    --yellow: #ffcc00;
+    --indigo: #5856d6;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.10), 0 2px 4px rgba(0,0,0,0.06);
+    --shadow-lg: 0 12px 40px rgba(0,0,0,0.13), 0 4px 8px rgba(0,0,0,0.06);
+    --radius: 20px;
+    --radius-sm: 14px;
+    --radius-xs: 10px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text1);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ─── NOISE TEXTURE OVERLAY ─── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* ─── STATUS BAR ─── */
+  .status-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(242,242,247,0.88);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 24px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .status-bar .time {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text1);
+    letter-spacing: -0.3px;
+  }
+
+  .status-icons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .status-icons svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--text1);
+  }
+
+  /* ─── MAIN LAYOUT ─── */
+  .container {
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 0 16px 100px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ─── HERO PROFILE ─── */
+  .hero {
+    padding: 32px 0 24px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s forwards;
+  }
+
+  .avatar-wrap {
+    position: relative;
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 16px;
+  }
+
+  .avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #007aff 0%, #5856d6 50%, #af52de 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 38px;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -1px;
+    box-shadow: 0 8px 32px rgba(0,122,255,0.3), 0 2px 8px rgba(0,0,0,0.12);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .avatar::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2.5px solid rgba(255,255,255,0.35);
+  }
+
+  .avatar-ring {
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #007aff, #af52de, #ff2d55, #ff9500);
+    padding: 2.5px;
+    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2.5px), #fff 0);
+    mask: radial-gradient(farthest-side, transparent calc(100% - 2.5px), #fff 0);
+    animation: spin 4s linear infinite;
+    opacity: 0.85;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .hero h1 {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--text1);
+    letter-spacing: -0.8px;
+    margin-bottom: 4px;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #007aff, #5856d6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero .handle {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text3);
+    margin-bottom: 12px;
+    letter-spacing: 0.1px;
+  }
+
+  .ai-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, rgba(0,122,255,0.1), rgba(88,86,214,0.1));
+    border: 1px solid rgba(0,122,255,0.2);
+    border-radius: 100px;
+    padding: 6px 14px;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: 0.1px;
+  }
+
+  .ai-badge .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--blue);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  /* ─── SECTION LABEL ─── */
+  .section-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 0 4px;
+    margin: 28px 0 12px;
+    opacity: 0;
+    animation: fadeUp 0.5s ease forwards;
+  }
+
+  /* ─── INFO CARDS ─── */
+  .info-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    padding: 18px 20px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeUp 0.5s ease forwards;
+    backdrop-filter: blur(10px);
+  }
+
+  .info-card p {
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--text2);
+    line-height: 1.65;
+  }
+
+  .info-card strong {
+    color: var(--blue);
+    font-weight: 700;
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .stat-card {
+    background: var(--card);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    padding: 16px 12px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    opacity: 0;
+    animation: fadeUp 0.5s ease forwards;
+    backdrop-filter: blur(10px);
+  }
+
+  .stat-card .num {
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, var(--c1), var(--c2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-card .lbl {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+
+  /* ─── APP GRID ─── */
+  .app-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .app-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeUp 0.5s ease forwards;
+    text-decoration: none;
+  }
+
+  .app-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.15s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .app-icon::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0) 60%);
+    pointer-events: none;
+  }
+
+  .app-item:active .app-icon {
+    transform: scale(0.92);
+    box-shadow: var(--shadow-sm);
+  }
+
+  @media (hover: hover) {
+    .app-item:hover .app-icon {
+      transform: scale(1.06) translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+  }
+
+  .app-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text1);
+    text-align: center;
+    letter-spacing: -0.1px;
+    line-height: 1.3;
+  }
+
+  /* ─── LIST APPS ─── */
+  .app-list {
+    background: var(--card);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+  }
+
+  .app-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 16px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s ease;
+    border-bottom: 1px solid var(--border);
+    opacity: 0;
+    animation: fadeUp 0.5s ease forwards;
+  }
+
+  .app-row:last-child { border-bottom: none; }
+
+  .app-row:active, .app-row:hover {
+    background: rgba(0,0,0,0.03);
+  }
+
+  .app-row .row-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .app-row .row-icon::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0) 60%);
+    pointer-events: none;
+  }
+
+  .app-row .row-text { flex: 1; min-width: 0; }
+
+  .app-row .row-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text1);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 2px;
+  }
+
+  .app-row .row-desc {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text3);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .chevron {
+    width: 7px;
+    height: 12px;
+    opacity: 0.3;
+    flex-shrink: 0;
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    text-align: center;
+    padding: 20px 0 0;
+    opacity: 0;
+    animation: fadeUp 0.5s ease forwards;
+  }
+
+  .footer p {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text3);
+    line-height: 1.7;
+  }
+
+  .footer .heart { color: var(--red); }
+
+  /* ─── BOTTOM NAV ─── */
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 430px;
+    z-index: 100;
+    padding: 8px 16px 24px;
+    background: rgba(242,242,247,0.88);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .nav-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    cursor: pointer;
+    padding: 4px 16px;
+    border-radius: 10px;
+    transition: background 0.15s;
+    border: none;
+    background: none;
+  }
+
+  .nav-btn:active { background: rgba(0,0,0,0.05); }
+
+  .nav-btn svg { width: 22px; height: 22px; }
+
+  .nav-btn span {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--text3);
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .nav-btn.active svg path, .nav-btn.active svg rect, .nav-btn.active svg circle {
+    fill: var(--blue);
+  }
+
+  .nav-btn.active span { color: var(--blue); }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(16px); }
+  }
+
+  /* ─── SECTIONS (tab switching) ─── */
+  .section { display: none; }
+  .section.active { display: block; }
+
+  /* ─── ABOUT SECTION ─── */
+  .about-header {
+    padding: 28px 0 20px;
+    opacity: 0;
+    animation: fadeUp 0.5s ease forwards;
+    text-align: center;
+  }
+
+  .about-header h2 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.6px;
+    margin-bottom: 6px;
+  }
+
+  .about-header p {
+    font-size: 14px;
+    color: var(--text3);
+    font-weight: 500;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    border-radius: 100px;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+  }
+</style>
+</head>
+<body>
+
+<!-- STATUS BAR -->
+<div class="status-bar">
+  <span class="time" id="clock">9:41</span>
+  <div class="status-icons">
+    <svg viewBox="0 0 24 24"><path d="M1 1l22 22M16.72 11.06A10.94 10.94 0 0 1 19 12.55M5 12.55a10.94 10.94 0 0 1 5.17-2.39M10.71 5.05A16 16 0 0 1 22.56 9M1.42 9a15.91 15.91 0 0 1 4.7-2.88M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+    <!-- signal bars -->
+    <svg viewBox="0 0 24 24" style="width:14px;height:14px">
+      <rect x="2" y="16" width="3" height="5" rx="1" fill="currentColor"/>
+      <rect x="7" y="12" width="3" height="9" rx="1" fill="currentColor"/>
+      <rect x="12" y="8" width="3" height="13" rx="1" fill="currentColor"/>
+      <rect x="17" y="4" width="3" height="17" rx="1" fill="currentColor"/>
+    </svg>
+    <!-- battery -->
+    <svg viewBox="0 0 28 14" style="width:22px;height:14px">
+      <rect x="0.5" y="0.5" width="23" height="13" rx="3.5" stroke="currentColor" stroke-opacity="0.35" fill="none" stroke-width="1"/>
+      <rect x="2" y="2" width="18" height="10" rx="2" fill="currentColor"/>
+      <path d="M25 4.5v5a2.5 2.5 0 0 0 0-5z" fill="currentColor" opacity="0.4"/>
+    </svg>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+  <!-- ══ HOME SECTION ══ -->
+  <div class="section active" id="sec-home">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="avatar-wrap">
+        <div class="avatar-ring"></div>
+        <div class="avatar">RS</div>
+      </div>
+      <h1>Rahmat <span>Sobrian</span></h1>
+      <div class="handle">@siroha</div>
+      <div class="ai-badge">
+        <span class="dot"></span>
+        99% AI-Powered Projects
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="section-label" style="animation-delay:0.2s">Overview</div>
+
+    <div class="stat-row">
+      <div class="stat-card" style="--c1:#007aff;--c2:#5856d6;animation-delay:0.25s">
+        <span class="num">12</span>
+        <span class="lbl">Projects</span>
+      </div>
+      <div class="stat-card" style="--c1:#34c759;--c2:#30d158;animation-delay:0.3s">
+        <span class="num">99%</span>
+        <span class="lbl">AI Built</span>
+      </div>
+      <div class="stat-card" style="--c1:#ff9500;--c2:#ff6b00;animation-delay:0.35s">
+        <span class="num">∞</span>
+        <span class="lbl">Ideas</span>
+      </div>
+    </div>
+
+    <!-- BIO -->
+    <div class="info-card" style="animation-delay:0.4s">
+      <p>Hai! Saya <strong>Rahmat Sobrian</strong>, dikenal sebagai <strong>Siroha</strong>. Semua website yang kamu lihat di sini dibuat <strong>99% menggunakan AI</strong> — mulai dari desain, kode, hingga logika aplikasi. Hanya segelintir sentuhan manusia di balik semua ini. 🤖✨</p>
+    </div>
+
+    <!-- FEATURED APPS GRID -->
+    <div class="section-label" style="animation-delay:0.45s">Featured Apps</div>
+
+    <div class="app-grid">
+
+      <a href="https://gitdrop.vercel.app" target="_blank" rel="noopener" class="app-item" style="animation-delay:0.5s">
+        <div class="app-icon" style="background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460)">🐙</div>
+        <span class="app-name">GitDrop</span>
+      </a>
+
+      <a href="https://githubrepomgr.vercel.app" target="_blank" rel="noopener" class="app-item" style="animation-delay:0.55s">
+        <div class="app-icon" style="background:linear-gradient(135deg,#24292e,#40464e)">🗂️</div>
+        <span class="app-name">GitHub Repo Manager</span>
+      </a>
+
+      <a href="https://ksunsimiliarweb.vercel.app" target="_blank" rel="noopener" class="app-item" style="animation-delay:0.6s">
+        <div class="app-icon" style="background:linear-gradient(135deg,#ff6b35,#f7c59f)">🔧</div>
+        <span class="app-name">KernelSU-Next Web (Prototipe)</span>
+      </a>
+
+      <a href="https://sirohalinkbio.vercel.app" target="_blank" rel="noopener" class="app-item" style="animation-delay:0.65s">
+        <div class="app-icon" style="background:linear-gradient(135deg,#667eea,#764ba2)">🔗</div>
+        <span class="app-name">Siroha Link Bio</span>
+      </a>
+
+      <a href="https://sirohamodulerepo.vercel.app/" target="_blank" rel="noopener" class="app-item" style="animation-delay:0.7s">
+        <div class="app-icon" style="background:linear-gradient(135deg,#11998e,#38ef7d)">📦</div>
+        <span class="app-name">Siroha Module Repo</span>
+      </a>
+
+      <a href="https://topanimelistmal.vercel.app/" target="_blank" rel="noopener" class="app-item" style="animation-delay:0.75s">
+        <div class="app-icon" style="background:linear-gradient(135deg,#2193b0,#6dd5ed)">🏆</div>
+        <span class="app-name">MAL Anime Rank</span>
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- ══ APPS SECTION ══ -->
+  <div class="section" id="sec-apps">
+
+    <div class="about-header">
+      <h2>Semua Aplikasi</h2>
+      <p>Tap untuk membuka web app</p>
+    </div>
+
+    <div class="app-list">
+
+      <a href="https://gitdrop.vercel.app" target="_blank" rel="noopener" class="app-row" style="animation-delay:0.1s">
+        <div class="row-icon" style="background:linear-gradient(135deg,#1a1a2e,#0f3460)">🐙</div>
+        <div class="row-text">
+          <div class="row-title">GitDrop</div>
+          <div class="row-desc">Upload your project easily to repo</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 7 12" fill="none"><path d="M1 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <a href="https://githubrepomgr.vercel.app" target="_blank" rel="noopener" class="app-row" style="animation-delay:0.15s">
+        <div class="row-icon" style="background:linear-gradient(135deg,#24292e,#40464e)">🗂️</div>
+        <div class="row-text">
+          <div class="row-title">GitHub Repo Manager</div>
+          <div class="row-desc">Kelola repo: buat & hapus</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 7 12" fill="none"><path d="M1 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <a href="https://githubfnfrepomgr.vercel.app" target="_blank" rel="noopener" class="app-row" style="animation-delay:0.2s">
+        <div class="row-icon" style="background:linear-gradient(135deg,#40464e,#6e7681)">📁</div>
+        <div class="row-text">
+          <div class="row-title">GitHub File Folder Manager</div>
+          <div class="row-desc">Kelola file & folder yang ada di dalam repo</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 7 12" fill="none"><path d="M1 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <a href="https://ksunsimiliarweb.vercel.app" target="_blank" rel="noopener" class="app-row" style="animation-delay:0.25s">
+        <div class="row-icon" style="background:linear-gradient(135deg,#ff6b35,#f7c59f)">🔧</div>
+        <div class="row-text">
+          <div class="row-title">KernelSU-Next Web (Prototipe)</div>
+          <div class="row-desc">Similiar Web Like KernelSU-Next Web</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 7 12" fill="none"><path d="M1 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <a href="https://sirohalinkbio.vercel.app" target="_blank" rel="noopener" class="app-row" style="animation-delay:0.3s">
+        <div class="row-icon" style="background:linear-gradient(135deg,#667eea,#764ba2)">🔗</div>
+        <div class="row-text">
+          <div class="row-title">Siroha Link Bio</div>
+          <div class="row-desc">Semua link dalam satu tempat</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 7 12" fill="none"><path d="M1 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <a href="https://sirohamodulerepo.vercel.app" target="_blank" rel="noopener" class="app-row" style="animation-delay:0.35s">
+        <div class="row-icon" style="background:linear-gradient(135deg,#11998e,#38ef7d)">📦</div>
+        <div class="row-text">
+          <div class="row-title">Module Repository</div>
+          <div class="row-desc">Repositori modul Magisk, KernelSU, Apatch dll</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 7 12" fill="none"><path d="M1 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <a href="https://topanimelistmal.vercel.app" target="_blank" rel="noopener" class="app-row" style="animation-delay:0.4s">
+        <div class="row-icon" style="background:linear-gradient(135deg,#2193b0,#6dd5ed)">🏆</div>
+        <div class="row-text">
+          <div class="row-title">Rank Anime MyAnimeList</div>
+          <div class="row-desc">Ranking anime dari MAL</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 7 12" fill="none"><path d="M1 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <a href="https://shironimekun.vercel.app" target="_blank" rel="noopener" class="app-row" style="animation-delay:0.45s">
+        <div class="row-icon" style="background:linear-gradient(135deg,#e96c6c,#f5576c)">🎬</div>
+        <div class="row-text">
+          <div class="row-title">Stream Anime (Prototipe)</div>
+          <div class="row-desc">Nonton anime online</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 7 12" fill="none"><path d="M1 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <a href="https://sobritiktokdownloader.vercel.app" target="_blank" rel="noopener" class="app-row" style="animation-delay:0.5s">
+        <div class="row-icon" style="background:linear-gradient(135deg,#010101,#69c9d0)">🎵</div>
+        <div class="row-text">
+          <div class="row-title">TikTok Downloader</div>
+          <div class="row-desc">Download video or audio from TikTok</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 7 12" fill="none"><path d="M1 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <a href="https://shirogamestore.vercel.app" target="_blank" rel="noopener" class="app-row" style="animation-delay:0.55s">
+        <div class="row-icon" style="background:linear-gradient(135deg,#f7971e,#ffd200)">🎮</div>
+        <div class="row-text">
+          <div class="row-title">Web Top Up Game (Prototipe)</div>
+          <div class="row-desc">Platform top up game</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 7 12" fill="none"><path d="M1 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <a href="https://shiropremiumstore.vercel.app" target="_blank" rel="noopener" class="app-row" style="animation-delay:0.6s">
+        <div class="row-icon" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb)">🛒</div>
+        <div class="row-text">
+          <div class="row-title">Web Store Premium (Prototipe)</div>
+          <div class="row-desc">Toko produk digital premium</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 7 12" fill="none"><path d="M1 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <a href="https://cvatsgen.vercel.app" target="_blank" rel="noopener" class="app-row" style="animation-delay:0.65s">
+        <div class="row-icon" style="background:linear-gradient(135deg,#007aff,#5856d6)">📄</div>
+        <div class="row-text">
+          <div class="row-title">CV ATS Generator</div>
+          <div class="row-desc">Buat CV lolos ATS scanner</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 7 12" fill="none"><path d="M1 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- ══ ABOUT SECTION ══ -->
+  <div class="section" id="sec-about">
+
+    <div class="about-header">
+      <h2>Tentang Siroha</h2>
+      <p>Manusia di balik 99% AI</p>
+    </div>
+
+    <div class="info-card" style="animation-delay:0.15s">
+      <p>Nama saya <strong>Rahmat Sobrian</strong>, akrab disapa <strong>Siroha</strong>. Saya percaya bahwa AI adalah alat yang luar biasa — bukan pengganti kreativitas, tapi amplifier-nya. 🚀</p>
+    </div>
+
+    <div class="info-card" style="animation-delay:0.2s; margin-top:10px">
+      <p>Semua website yang saya buat <strong>99% menggunakan AI</strong> seperti Claude, ChatGPT, dan berbagai model AI lainnya. Saya berperan sebagai <strong>arsitek ide</strong> — merancang konsep, mengarahkan AI, dan memastikan hasilnya bermanfaat bagi banyak orang.</p>
+    </div>
+
+    <div class="section-label" style="animation-delay:0.25s">Tech & Tools</div>
+
+    <div class="info-card" style="animation-delay:0.3s">
+      <div class="skill-tags">
+        <div class="tag" style="background:rgba(0,122,255,0.1);color:#007aff;">🤖 Claude AI</div>
+        <div class="tag" style="background:rgba(52,199,89,0.1);color:#34c759;">⚡ Vercel</div>
+        <div class="tag" style="background:rgba(88,86,214,0.1);color:#5856d6;">🐙 GitHub</div>
+        <div class="tag" style="background:rgba(255,149,0,0.1);color:#ff9500;">🎨 HTML/CSS</div>
+        <div class="tag" style="background:rgba(255,45,85,0.1);color:#ff2d55;">📱 Mobile-First</div>
+        <div class="tag" style="background:rgba(90,200,250,0.1);color:#0a85d1;">🌐 Web Apps</div>
+        <div class="tag" style="background:rgba(175,82,222,0.1);color:#af52de;">✨ Vibe Coding</div>
+      </div>
+    </div>
+
+    <div class="section-label" style="animation-delay:0.35s">Filosofi</div>
+
+    <div class="info-card" style="animation-delay:0.4s">
+      <p>"<strong>Vibe coding</strong> bukan tentang apakah kamu bisa menulis setiap baris kode — tapi apakah kamu bisa <strong>mewujudkan ide</strong> menjadi sesuatu yang nyata dan berguna. AI adalah canvas, kamu adalah seniman." 🎨</p>
+    </div>
+
+    <div class="footer" style="animation-delay:0.5s;margin-top:24px">
+      <p>Made with <span class="heart">♥</span> & 99% AI by Siroha<br>
+      <span style="font-size:11px;color:var(--text3)">© 2026 Rahmat Sobrian · All Rights Reserved</span></p>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <button class="nav-btn active" id="nav-home" onclick="switchTab('home')">
+    <svg viewBox="0 0 24 24" fill="none">
+      <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z" fill="#007aff"/>
+      <path d="M9 21V12h6v9" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <span style="color:#007aff">Home</span>
+  </button>
+
+  <button class="nav-btn" id="nav-apps" onclick="switchTab('apps')">
+    <svg viewBox="0 0 24 24" fill="none">
+      <rect x="3" y="3" width="7" height="7" rx="2" fill="#8e8e93"/>
+      <rect x="14" y="3" width="7" height="7" rx="2" fill="#8e8e93"/>
+      <rect x="3" y="14" width="7" height="7" rx="2" fill="#8e8e93"/>
+      <rect x="14" y="14" width="7" height="7" rx="2" fill="#8e8e93"/>
+    </svg>
+    <span>Apps</span>
+  </button>
+
+  <button class="nav-btn" id="nav-about" onclick="switchTab('about')">
+    <svg viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="8" r="4" fill="#8e8e93"/>
+      <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" fill="#8e8e93"/>
+    </svg>
+    <span>About</span>
+  </button>
+</div>
+
+<script>
+  // Clock
+  function updateClock() {
+    const now = new Date();
+    let h = now.getHours(), m = now.getMinutes();
+    document.getElementById('clock').textContent = h + ':' + (m < 10 ? '0' + m : m);
+  }
+  updateClock();
+  setInterval(updateClock, 10000);
+
+  // Tab switching
+  function switchTab(tab) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-btn').forEach(b => {
+      b.classList.remove('active');
+      b.querySelector('span').style.color = '';
+    });
+
+    document.getElementById('sec-' + tab).classList.add('active');
+    const btn = document.getElementById('nav-' + tab);
+    btn.classList.add('active');
+
+    // Re-trigger animations
+    document.querySelectorAll('#sec-' + tab + ' [style*="animation-delay"]').forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px)';
+      setTimeout(() => {
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      }, 50 + i * 40);
+    });
+
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Haptic-like feedback on tap
+  document.querySelectorAll('.app-item, .app-row').forEach(el => {
+    el.addEventListener('touchstart', () => {
+      if (window.navigator.vibrate) window.navigator.vibrate(8);
+    }, { passive: true });
+  });
+</script>
+</body>
+</html>
